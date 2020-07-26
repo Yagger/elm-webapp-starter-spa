@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $1 = "build" ]
+then
+    elm make src/Main.elm --output app.js --optimize && uglifyjs app.js --compress 'pure_funcs="F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9",pure_getters=true,keep_fargs=false,unsafe_comps=true,unsafe=true,passes=2' --output=app.js && uglifyjs app.js --mangle --output=app.js
+elif [ $1 = "dev" ]
+then
+    # add --open flag to open the app in your browser automatically
+    elm-live src/Main.elm --port=8081 --host=local.formsnap.net --pushstate --start-page=index.html -- --output=app.js --debug
+else
+    echo Expected commands are build and dev
+fi
