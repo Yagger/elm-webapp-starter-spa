@@ -219,7 +219,7 @@ header model =
               , text "║▀  ║"
               , text "╚═══╝"
               ]
-          , el [Font.size <| biggerFont model 1.5] <| text "Formsnap"
+          , el [Font.size <| biggerFont model 1.5] <| text "AppName"
           ]
         , menuLink [] {url = "/", label = text "Home"}
         , menuLink [] {url = "/contacts", label = text "Contacts"}
@@ -360,7 +360,7 @@ loginView model =
           , paddingXY 0 10
           ]
           { onPress = Just OnLogin
-          , label = text "Log in to Formsnap"
+          , label = text "Log in to AppName"
           }
         ]
 
@@ -406,7 +406,7 @@ signupView model =
           , label = In.labelRight [width fill] <|
             paragraph
               []
-              [ text "I agree to Formsnap’s "
+              [ text "I agree to AppName’s "
               , newTabLink [Font.underline] {url = "/terms", label = text "Terms of Service"}
               ]
           }
